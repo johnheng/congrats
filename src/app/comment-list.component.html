@@ -1,1 +1,6 @@
-asdfasdff
+<ul class="my-new-list">
+    <li *ngFor="let comment of comments; let odd = odd; let index = index" [ngSwitch]="odd">
+        <comment-left *ngSwitchCase="true" [comment]="comment"></comment-left>
+        <comment-right *ngSwitchCase="false" [comment]="comment"></comment-right>
+    </li>
+</ul>
