@@ -3,12 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent }  from './app.component';
 import { CommentListComponent } from './comment-list.component';
-import { CommentRightComponent } from './comment-right.component';
-import { CommentLeftComponent } from './comment-left.component';
+import { CommentComponent } from './comment.component';
 
 @NgModule({
   imports:      [ BrowserModule ],
-  declarations: [ AppComponent, CommentListComponent, CommentRightComponent, CommentLeftComponent ],
+  declarations: [ AppComponent, CommentListComponent, CommentComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

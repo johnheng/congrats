@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { CommentRightComponent } from './comment-right.component';
-import { CommentLeftComponent } from './comment-left.component';
 
 @Component({
   selector: 'comments',
