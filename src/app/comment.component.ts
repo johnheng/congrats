@@ -9,8 +9,4 @@ import { Component, Input } from '@angular/core';
 export class CommentComponent  { 
     @Input() comment: any;
     @Input() position: string;
-
-    ngOnInit() {
-        console.log(this.position);
-    }
 }
