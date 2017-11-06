@@ -7,10 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['css/stylish-portfolio.css']
 })
 export class CommentComponent  { 
-    @Input() comment;
+    @Input() comment: any;
     @Input() position: string;
-
-    ngOnInit() {
-        console.log(this.position);
-    }
 }

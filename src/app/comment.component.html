@@ -1,6 +1,5 @@
-<div class="user {{position}}"></div>
-<li class="message {{position}}">
-    <span>{{comment.author}}</span>
-    <span>{{comment.date}}</span>
-    <span>{{comment.text}}</span>
+<div class="user {{position == 'true' ? 'left' : 'right'}}"></div>
+<li class="message {{position == 'true' ? 'left' : 'right'}}">
+    <span>{{comment.Name}}, {{comment.Timestamp}}</span>
+    <span>{{comment.Comment}}</span>
 </li>
