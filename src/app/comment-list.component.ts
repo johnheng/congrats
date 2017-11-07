@@ -14,7 +14,7 @@ export class CommentListComponent  {
   ngOnInit() {
     console.log("ngOnInit");
     // console.log(this.commentService.get().subscribe((result => { this.comments = result })));
-    console.log(this.commentService.get().subscribe(result => { this.comments = result }));
+    this.commentService.get().subscribe(result => { this.comments = result; console.log(result); });
   }
 }
 

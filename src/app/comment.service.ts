@@ -11,25 +11,19 @@ export class CommentService {
   private spreadsheetUrl = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=1VaWHioyj_OzKQ5J9HXDCwoSDgSRhkwbYbI9ZP_Ub2RQ&output=html';
 
   data: Observable<Comment[]>;
-  getDataAsObservable = bindCallback.bindCallback(this.getData);
+  getDataAsObservable = bindCallback.bindCallback(this.commentCallback);
 
   get() : Observable<{}> {
-    Tabletop.init({
-      key: this.spreadsheetUrl,
-      callback: this.commentCallback,
-      simpleSheet: true
-    });
+    
     
     // return this.data;
-    console.log(Tabletop);
+    // console.log(this.getData());
+    this.getData();
 
     const log = (val, cb) => cb(val);
     const trace = bindCallback.bindCallback(log);
-    
-    // trace(Tabletop)
-    // .subscribe(x => { console.log("hello"); return x });
-    console.log(trace(Tabletop).map(res => res));
-    return trace(Tabletop).map(res => res);
+
+    return trace(this.data).map(res => res);
   }
 
   commentCallback(data, tabletop) {
@@ -38,7 +32,14 @@ export class CommentService {
     this.data = data;
   }
 
-  getData(tabletop) {
-    console.log(tabletop);
+  getData()  {
+    let tabletopData;
+    Tabletop.init({
+      key: this.spreadsheetUrl,
+      callback: this.getDataAsObservable,
+      simpleSheet: true
+    });
+
+    return "tabletopData";
   }
 }
