@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
-import * as Tabletop from 'tabletop/src/tabletop';
 import { Observable } from 'rxjs/observable';
 import { Http, HttpModule } from '@angular/http';
-
 import 'rxjs/add/operator/map';
-import * as bindCallback from 'rxjs/observable/bindCallback';
 
 @Injectable()
 export class CommentService {

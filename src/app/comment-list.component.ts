@@ -1,5 +1,6 @@
 import { Component, EventEmitter } from '@angular/core';
 import { CommentService } from './comment.service';
+import { Result } from './result';
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -13,8 +14,7 @@ export class CommentListComponent  {
 
   ngOnInit() {
     console.log("ngOnInit");
-    // console.log(this.commentService.get().subscribe((result => { this.comments = result })));
-    this.commentService.get().subscribe(result => { this.comments = result.feed.entry; console.log(result.feed.entry); });
+    this.commentService.get().subscribe((result: Result) => { this.comments = result.feed.entry;  });
   }
 }
 
